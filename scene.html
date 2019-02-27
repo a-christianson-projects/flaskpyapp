@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<h2><small>Scene Registration</small></h2>
+<a class="btn btn-success" href="/sceneregistration">Add Scene</a>
+<hr>
+<table class="table table-striped">
+  <tr>
+    <th>Scene Name</th>
+    <th>Scene Status</th>
+    <th>Sensor</th>
+    <th>Scene OrderID</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  {% for scene in scenes %}
+
+    <tr>
+      <td>{{scene.imgname}}</td>
+      <td>{{scene.statimg}}</td>
+      <td>{{scene.imgsensor}}</td>
+      <td>{{scene.imgorderid}}</td>
+      <td><a href="edit_scene/{{scene.imgname}}" class="btn btn-default pull-right">Edit</td>
+        <td><a href="edit_scene/{{scene.imgname}}" class="btn btn-danger pull-right">Delete</td>
+        </tr>
+  {% endfor %}
+</table>
+{% endblock %}

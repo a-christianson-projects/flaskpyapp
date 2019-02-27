@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<h2><small>Order Request</small></h2>
+<a class="btn btn-success" href="/orderregform">Add Order</a>
+<hr>
+<table class="table table-striped">
+  <tr>
+    <th>Order ID</th>
+    <th>Order Date</th>
+    <th>Status</th>
+    <th>User ID</th>
+    <th></th>
+    <th></th>
+  </tr>
+  {% for orders in orders %}
+  <tr>
+    <td>{{orders.orderid}}</td>
+    <td>{{orders.orderdate}}</td>
+    <td>{{orders.status}}</td>
+    <td>{{orders.active}}</td>
+    <td><a href="edit_orders/{{orders.orderid}}" class="btn btn-default pull-right">Edit</td>
+    <td><a href="edit_orders/{{orders.orderid}}" class="btn btn-danger pull-right">Delete</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

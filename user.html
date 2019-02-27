@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<h2><small>User Registration</small></h2>
+<a class="btn btn-success" href="/userregisterform">Add User</a>
+<hr>
+<table class="table table-striped">
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email address</th>
+    <th>Date Created</th>
+    <th>Active</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  {% for article in articles %}
+
+    <tr>
+      <td>{{article.fname}}</td>
+      <td>{{article.lname}}</td>
+      <td>{{article.usemail}}</td>
+      <td>{{article.dateusercreated}}</td>
+      <td>{{article.usactive}}</td>
+      <td><a href="edit_article/{{article.fname}}" class="btn btn-default pull-right">Edit</td>
+        <td><a href="edit_article/{{article.fname}}" class="btn btn-danger pull-right">Delete</td>
+        </tr>
+  {% endfor %}
+</table>
+{% endblock %}

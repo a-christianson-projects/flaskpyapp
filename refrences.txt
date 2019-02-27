@@ -1,0 +1,5 @@
+http://getbootstrap.com
+http://bootstrapCDN.com
+http://flask.pocoo.org/
+http://wtforms.docs.io
+https://www.w3schools.com/bootstrap/bootstrap.asp
